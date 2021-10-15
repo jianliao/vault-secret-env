@@ -1,0 +1,5 @@
+{
+  "STORAGE_LOCAL_DRIVER": "local",
+  "STORAGE_LOCAL_ROOT": "./uploads",
+  "STORAGE_LOCATIONS": "local"
+}

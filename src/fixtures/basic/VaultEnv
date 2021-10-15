@@ -1,0 +1,14 @@
+PORT=dme_spectrum/data/cms/gm:PORT
+PUBLIC_URL=dme_spectrum/data/cms/gm:PUBLIC_URL
+
+DB_CLIENT=dme_spectrum/data/cms/db:DB_CLIENT
+DB_DATABASE=dme_spectrum/data/cms/db:DB_DATABASE
+DB_HOST=dme_spectrum/data/cms/db:DB_HOST
+DB_PORT=dme_spectrum/data/cms/db:DB_PORT
+DB_SSL=dme_spectrum/data/cms/db:DB_SSL
+
+CACHE_ENABLED=dme_spectrum/data/cms/cache:CACHE_ENABLED
+
+STORAGE_LOCAL_DRIVER=dme_spectrum/data/cms/fs:STORAGE_LOCAL_DRIVER
+STORAGE_LOCAL_ROOT=dme_spectrum/data/cms/fs:STORAGE_LOCAL_ROOT
+STORAGE_LOCATIONS=dme_spectrum/data/cms/fs:STORAGE_LOCATIONS

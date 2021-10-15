@@ -1,0 +1,6 @@
+{
+  "EMAIL_FROM": "no-reply@directus.io",
+  "EMAIL_SENDMAIL_NEW_LINE": "unix",
+  "EMAIL_SENDMAIL_PATH": "/usr/sbin/sendmail",
+  "EMAIL_TRANSPORT": "sendmail"
+}

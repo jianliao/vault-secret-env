@@ -1,0 +1,8 @@
+{
+  "OAUTH_OKTA_ACCESS_URL": "https://adobe.okta.com/oauth2/v1/token",
+  "OAUTH_OKTA_AUTHORIZE_URL": "https://adobe.okta.com/oauth2/v1/authorize",
+  "OAUTH_OKTA_PROFILE_URL": "https://adobe.okta.com/oauth2/v1/userinfo",
+  "OAUTH_OKTA_SCOPE": "openid email",
+  "OAUTH_OKTA_STATE": "true",
+  "OAUTH_PROVIDERS": "Okta"
+}

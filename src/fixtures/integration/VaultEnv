@@ -1,0 +1,17 @@
+PORT=dme_spectrum/data/cms/gm:PORT
+UNKNOWN=dme_spectrum/data/cms/gm:UNKNOWN
+
+DB_CLIENT=dme_spectrum/data/cms/db:DB_CLIENT
+DB_PORT=dme_spectrum/data/cms/db:DB_PORT
+DB_SSL=dme_spectrum/data/cms/db:DB_SSL
+
+CACHE_ENABLED=dme_spectrum/data/cms/cache:CACHE_ENABLED
+
+RATE_LIMITER_DURATION=dme_spectrum/data/cms/rl
+RATE_LIMITER_ENABLED=dme_spectrum/data/cms/rl
+RATE_LIMITER_POINTS=dme_spectrum/data/cms/rl
+RATE_LIMITER_STORE=dme_spectrum/data/cms/rl
+
+STORAGE_LOCAL_DRIVER=dme_spectrum/data/cms/fs:STORAGE_LOCAL_DRIVER
+STORAGE_LOCAL_ROOT=dme_spectrum/data/cms/fs:STORAGE_LOCAL_ROOT
+STORAGE_LOCATIONS=dme_spectrum/data/cms/fs:STORAGE_LOCATIONS

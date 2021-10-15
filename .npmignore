@@ -1,0 +1,9 @@
+.github/
+.vscode/
+coverage/
+node_modules/
+jest.*.js
+src/**/*.test.js
+src/fixtures
+vault/*
+start-vault-dev-server-for-testing.sh

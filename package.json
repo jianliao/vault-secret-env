@@ -1,0 +1,33 @@
+{
+  "name": "vault-secret-env",
+  "version": "1.0.0",
+  "description": "Pull vault secrets into process.env",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./start-vault-dev-server-for-testing.sh && jest && pkill -9 vault"
+  },
+  "bin": {
+    "vault-env": "src/cli.js"
+  },
+  "keywords": [
+    "vault",
+    "process.env",
+    "hashicorp",
+    "dotenv"
+  ],
+  "author": "Jian Liao <jian.liao@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "execa": "^5.1.1",
+    "jest": "^27.1.1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^8.2.0",
+    "dotenv": "^10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jianliao/vault-secrets-env.git"
+  }
+}
