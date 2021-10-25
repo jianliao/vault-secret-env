@@ -6,7 +6,7 @@ describe('Https basic scenarios', () => {
       `${process.env.VAULT_ADDR}/v1/sys/mounts`,
       { 'X-Vault-Token': process.env.VAULT_ROOT_TOKEN }
     );
-    expect(res.data['dme_spectrum/'].type).toBe('kv');
+    expect(res.data['domain/'].type).toBe('kv');
   });
 
   test('should consume text/html response', async () => {

@@ -1,7 +1,7 @@
-PORT=dme_spectrum/data/cms/gm
-PUBLIC_URL=dme_spectrum/data/cms/gm
+PORT=domain/data/cms/gm
+PUBLIC_URL=domain/data/cms/gm
 
-RATE_LIMITER_DURATION=dme_spectrum/data/cms/rl
-RATE_LIMITER_ENABLED=dme_spectrum/data/cms/rl
-RATE_LIMITER_POINTS=dme_spectrum/data/cms/rl
-RATE_LIMITER_STORE=dme_spectrum/data/cms/rl
+RATE_LIMITER_DURATION=domain/data/cms/rl
+RATE_LIMITER_ENABLED=domain/data/cms/rl
+RATE_LIMITER_POINTS=domain/data/cms/rl
+RATE_LIMITER_STORE=domain/data/cms/rl

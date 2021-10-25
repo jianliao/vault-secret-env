@@ -1,3 +1,3 @@
-path "dme_spectrum/data/cms/*" {
+path "domain/data/cms/*" {
     capabilities = ["read"]
 }

@@ -40,7 +40,7 @@ describe('CLI basic scenarios', () => {
     expect(stdout).toMatch(/PORT : 8055/);
     expect(stdout).toMatch(/DB_CLIENT : pg/);
     expect(stdout).toMatch(/DB_DATABASE : sdscms/);
-    expect(stdout).toMatch(/DB_HOST : storkprdd.corp.adobe.com/);
+    expect(stdout).toMatch(/DB_HOST : domain.com/);
     expect(stdout).toMatch(/DB_PORT : 5423/);
   });
 
@@ -50,33 +50,33 @@ describe('CLI basic scenarios', () => {
     expect(stdout).toMatch(/PORT : 8055/);
     expect(stdout).toMatch(/DB_CLIENT : pg/);
     expect(stdout).toMatch(/DB_DATABASE : sdscms/);
-    expect(stdout).toMatch(/DB_HOST : storkprdd.corp.adobe.com/);
+    expect(stdout).toMatch(/DB_HOST : domain.com/);
     expect(stdout).toMatch(/DB_PORT : 5423/);
   });
 
   test('should support specify root token, token role and path from command line parameters', async () => {
-    const { exitCode, stdout } = await execa('node', ['src/cli', '-t', process.env.VAULT_ROOT_TOKEN, '-p', 'src/fixtures/basic', '-tr', 'dme_spectrum_cms']);
+    const { exitCode, stdout } = await execa('node', ['src/cli', '-t', process.env.VAULT_ROOT_TOKEN, '-p', 'src/fixtures/basic', '-tr', 'domain_cms']);
     expect(exitCode).toBe(0);
     expect(stdout).toMatch(/PORT : 8055/);
     expect(stdout).toMatch(/DB_CLIENT : pg/);
     expect(stdout).toMatch(/DB_DATABASE : sdscms/);
-    expect(stdout).toMatch(/DB_HOST : storkprdd.corp.adobe.com/);
+    expect(stdout).toMatch(/DB_HOST : domain.com/);
     expect(stdout).toMatch(/DB_PORT : 5423/);
   });
 
   test('should support specify token role ttl and path from command line parameters', async () => {
-    const { exitCode, stdout } = await execa('node', ['src/cli', '-t', process.env.VAULT_ROOT_TOKEN, '-p', 'src/fixtures/basic', '-tr', 'dme_spectrum_cms', '-ttl', '10']);
+    const { exitCode, stdout } = await execa('node', ['src/cli', '-t', process.env.VAULT_ROOT_TOKEN, '-p', 'src/fixtures/basic', '-tr', 'domain_cms', '-ttl', '10']);
     expect(exitCode).toBe(0);
     expect(stdout).toMatch(/PORT : 8055/);
     expect(stdout).toMatch(/DB_CLIENT : pg/);
     expect(stdout).toMatch(/DB_DATABASE : sdscms/);
-    expect(stdout).toMatch(/DB_HOST : storkprdd.corp.adobe.com/);
+    expect(stdout).toMatch(/DB_HOST : domain.com/);
     expect(stdout).toMatch(/DB_PORT : 5423/);
   });
 
   test('should fail if specify wrong server address', async () => {
     try {
-      await execa('node', ['src/cli', '-t', process.env.VAULT_ROOT_TOKEN, '-p', 'src/fixtures/basic', '-tr', 'dme_spectrum_cms', '-a', 'abc']);
+      await execa('node', ['src/cli', '-t', process.env.VAULT_ROOT_TOKEN, '-p', 'src/fixtures/basic', '-tr', 'domain_cms', '-a', 'abc']);
     }
     catch (e) {
       expect(e.toString()).toMatch(/Invalid URL/);

@@ -13,38 +13,38 @@ VaultEnv is like `.env` file and follows some of its basic [rules](https://githu
 For example:
 
 ```js
-PORT=dme_spectrum/data/cms/gm:PORT_NUMBER
-PUBLIC_URL=dme_spectrum/data/cms/gm:PUBLIC_URL_STR
+PORT=domain/data/cms/gm:PORT_NUMBER
+PUBLIC_URL=domain/data/cms/gm:PUBLIC_URL_STR
 
-DB_CLIENT=dme_spectrum/data/cms/db:DB_CLIENT_TYPE
-DB_DATABASE=dme_spectrum/data/cms/db:DB_DATABASE_NAME
-DB_HOST=dme_spectrum/data/cms/db:DB_HOST_NAME
-DB_PORT=dme_spectrum/data/cms/db:DB_PORT_NUMBER
-DB_SSL=dme_spectrum/data/cms/db:DB_SSL_CERT
+DB_CLIENT=domain/data/cms/db:DB_CLIENT_TYPE
+DB_DATABASE=domain/data/cms/db:DB_DATABASE_NAME
+DB_HOST=domain/data/cms/db:DB_HOST_NAME
+DB_PORT=domain/data/cms/db:DB_PORT_NUMBER
+DB_SSL=domain/data/cms/db:DB_SSL_CERT
 ```
 
 If the vault secret key name is identical to the environment variables, you can omit it. Below are the two identical configurations.
 
 ```js
-PORT=dme_spectrum/data/cms/gm:PORT
-PUBLIC_URL=dme_spectrum/data/cms/gm:PUBLIC_URL
+PORT=domain/data/cms/gm:PORT
+PUBLIC_URL=domain/data/cms/gm:PUBLIC_URL
 
-DB_CLIENT=dme_spectrum/data/cms/db:DB_CLIENT
-DB_DATABASE=dme_spectrum/data/cms/db:DB_DATABASE
-DB_HOST=dme_spectrum/data/cms/db:DB_HOST
-DB_PORT=dme_spectrum/data/cms/db:DB_PORT
-DB_SSL=dme_spectrum/data/cms/db:DB_SSL
+DB_CLIENT=domain/data/cms/db:DB_CLIENT
+DB_DATABASE=domain/data/cms/db:DB_DATABASE
+DB_HOST=domain/data/cms/db:DB_HOST
+DB_PORT=domain/data/cms/db:DB_PORT
+DB_SSL=domain/data/cms/db:DB_SSL
 ```
 
 ```js
-PORT=dme_spectrum/data/cms/gm
-PUBLIC_URL=dme_spectrum/data/cms/gm
+PORT=domain/data/cms/gm
+PUBLIC_URL=domain/data/cms/gm
 
-DB_CLIENT=dme_spectrum/data/cms/db
-DB_DATABASE=dme_spectrum/data/cms/db
-DB_HOST=dme_spectrum/data/cms/db
-DB_PORT=dme_spectrum/data/cms/db
-DB_SSL=dme_spectrum/data/cms/db
+DB_CLIENT=domain/data/cms/db
+DB_DATABASE=domain/data/cms/db
+DB_HOST=domain/data/cms/db
+DB_PORT=domain/data/cms/db
+DB_SSL=domain/data/cms/db
 ```
 
 VaultEnv file should put at the root of the project along with .env and package.json.
@@ -85,10 +85,10 @@ Output
 
 ```bash
 PORT : 8055 ✓
-PUBLIC_URL : https://spectrum.adobe.com ✓
+PUBLIC_URL : https://domain.com ✓
 DB_CLIENT : pg ✓
 DB_DATABASE : sdscms ✓
-DB_HOST : spectrum-db.adobe.com ✓
+DB_HOST : db.domain.com ✓
 DB_PORT : 5423 ✓
 DB_SSL : false ✓
 ```

@@ -1,7 +1,7 @@
 {
   "DB_CLIENT": "pg",
   "DB_DATABASE": "sdscms",
-  "DB_HOST": "storkprdd.corp.adobe.com",
+  "DB_HOST": "domain.com",
   "DB_PORT": "5423",
   "DB_SSL": "false",
   "DB_USER": "sdscms"

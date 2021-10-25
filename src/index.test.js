@@ -26,7 +26,7 @@ describe('Setup process.env with Vault Secrets', () => {
     delete process.env.RATE_LIMITER_STORE;
 
     // Preset the token role
-    process.env.VAULT_TOKEN_ROLE = 'dme_spectrum_cms';
+    process.env.VAULT_TOKEN_ROLE = 'domain_cms';
   });
 
   test('should get all the vault secrets set as environment variables', async () => {
@@ -58,7 +58,7 @@ describe('Setup process.env with Vault Secrets', () => {
     require('./index');
 
     expect(process.env.PORT).toBe('8055');
-    expect(process.env.PUBLIC_URL).toBe('https://spectrum-directus.corp.adobe.com');
+    expect(process.env.PUBLIC_URL).toBe('https://domain.com');
     expect(process.env.RATE_LIMITER_DURATION).toBe('1');
     expect(process.env.RATE_LIMITER_ENABLED).toBe('false');
     expect(process.env.RATE_LIMITER_POINTS).toBe('25');
@@ -93,7 +93,7 @@ describe('Setup process.env with Vault Secrets', () => {
     require('./index');
 
     expect(process.env.PORT).toBe('8055');
-    expect(process.env.PUBLIC_URL).toBe('https://spectrum-directus.corp.adobe.com');
+    expect(process.env.PUBLIC_URL).toBe('https://domain.com');
     expect(process.env.RATE_LIMITER_DURATION).toBe('1');
     expect(process.env.RATE_LIMITER_ENABLED).toBe('false');
     expect(process.env.RATE_LIMITER_POINTS).toBe('25');

@@ -12,30 +12,30 @@ export VAULT_ADDR='http://127.0.0.1:8200'
 # auth with root password
 vault login password
 
-# Enable v2 kv on path - dme_spectrum
-vault secrets enable -path=dme_spectrum -version=2 kv
+# Enable v2 kv on path - domain
+vault secrets enable -path=domain -version=2 kv
 
 # Batch create secret kv from json files
-vault kv put dme_spectrum/cms/cache @./vault/cache.json
+vault kv put domain/cms/cache @./vault/cache.json
 
-vault kv put dme_spectrum/cms/db @./vault/db.json
+vault kv put domain/cms/db @./vault/db.json
 
-vault kv put dme_spectrum/cms/email @./vault/email.json
+vault kv put domain/cms/email @./vault/email.json
 
-vault kv put dme_spectrum/cms/ext @./vault/ext.json
+vault kv put domain/cms/ext @./vault/ext.json
 
-vault kv put dme_spectrum/cms/fs @./vault/fs.json
+vault kv put domain/cms/fs @./vault/fs.json
 
-vault kv put dme_spectrum/cms/gm @./vault/gm.json
+vault kv put domain/cms/gm @./vault/gm.json
 
-vault kv put dme_spectrum/cms/rl @./vault/rl.json
+vault kv put domain/cms/rl @./vault/rl.json
 
-vault kv put dme_spectrum/cms/sec @./vault/sec.json
+vault kv put domain/cms/sec @./vault/sec.json
 
-vault kv put dme_spectrum/cms/sso @./vault/sso.json
+vault kv put domain/cms/sso @./vault/sso.json
 
-# Create policy - role_dme_spectrum_cms
-vault policy write role_dme_spectrum_cms ./vault/policy-file.hcl
+# Create policy - role_domain_cms
+vault policy write role_domain_cms ./vault/policy-file.hcl
 
-# Create token role - dme_spectrum_cms
-vault write auth/token/roles/dme_spectrum_cms allowed_policies=role_dme_spectrum_cms period=36h
+# Create token role - domain_cms
+vault write auth/token/roles/domain_cms allowed_policies=role_domain_cms period=36h

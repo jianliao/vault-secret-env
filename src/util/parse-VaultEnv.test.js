@@ -11,17 +11,17 @@ describe('Basic scenarios', () => {
 
     expect(Object.keys(secretsByPath)).toHaveLength(4);
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/gm'])).toHaveLength(2);
-    expect('PORT' in secretsByPath['dme_spectrum/data/cms/gm']).toBeTruthy();
-    expect('PUBLIC_URL' in secretsByPath['dme_spectrum/data/cms/gm']).toBeTruthy();
+    expect(Object.keys(secretsByPath['domain/data/cms/gm'])).toHaveLength(2);
+    expect('PORT' in secretsByPath['domain/data/cms/gm']).toBeTruthy();
+    expect('PUBLIC_URL' in secretsByPath['domain/data/cms/gm']).toBeTruthy();
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/db'])).toHaveLength(5);
-    expect('DB_PORT' in secretsByPath['dme_spectrum/data/cms/db']).toBeTruthy();
+    expect(Object.keys(secretsByPath['domain/data/cms/db'])).toHaveLength(5);
+    expect('DB_PORT' in secretsByPath['domain/data/cms/db']).toBeTruthy();
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/cache'])).toHaveLength(1);
-    expect('CACHE_ENABLED' in secretsByPath['dme_spectrum/data/cms/cache']).toBeTruthy();
+    expect(Object.keys(secretsByPath['domain/data/cms/cache'])).toHaveLength(1);
+    expect('CACHE_ENABLED' in secretsByPath['domain/data/cms/cache']).toBeTruthy();
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/fs'])).toHaveLength(3);
+    expect(Object.keys(secretsByPath['domain/data/cms/fs'])).toHaveLength(3);
   });
 });
 
@@ -33,15 +33,15 @@ describe('Environment variable name fall back as the secret key name', () => {
 
     expect(Object.keys(secretsByPath)).toHaveLength(2);
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/gm'])).toHaveLength(2);
-    expect('PORT' in secretsByPath['dme_spectrum/data/cms/gm']).toBeTruthy();
-    expect('PUBLIC_URL' in secretsByPath['dme_spectrum/data/cms/gm']).toBeTruthy();
+    expect(Object.keys(secretsByPath['domain/data/cms/gm'])).toHaveLength(2);
+    expect('PORT' in secretsByPath['domain/data/cms/gm']).toBeTruthy();
+    expect('PUBLIC_URL' in secretsByPath['domain/data/cms/gm']).toBeTruthy();
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/rl'])).toHaveLength(4);
-    expect('RATE_LIMITER_DURATION' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
-    expect('RATE_LIMITER_ENABLED' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
-    expect('RATE_LIMITER_POINTS' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
-    expect('RATE_LIMITER_STORE' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
+    expect(Object.keys(secretsByPath['domain/data/cms/rl'])).toHaveLength(4);
+    expect('RATE_LIMITER_DURATION' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
+    expect('RATE_LIMITER_ENABLED' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
+    expect('RATE_LIMITER_POINTS' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
+    expect('RATE_LIMITER_STORE' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
   });
 });
 
@@ -53,14 +53,14 @@ describe('Environment variable name fall back as the secret key name mix', () =>
 
     expect(Object.keys(secretsByPath)).toHaveLength(2);
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/gm'])).toHaveLength(2);
-    expect('PORT' in secretsByPath['dme_spectrum/data/cms/gm']).toBeTruthy();
-    expect('PUBLIC_URL' in secretsByPath['dme_spectrum/data/cms/gm']).toBeTruthy();
+    expect(Object.keys(secretsByPath['domain/data/cms/gm'])).toHaveLength(2);
+    expect('PORT' in secretsByPath['domain/data/cms/gm']).toBeTruthy();
+    expect('PUBLIC_URL' in secretsByPath['domain/data/cms/gm']).toBeTruthy();
 
-    expect(Object.keys(secretsByPath['dme_spectrum/data/cms/rl'])).toHaveLength(4);
-    expect('RATE_LIMITER_DURATION' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
-    expect('RATE_LIMITER_ENABLED' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
-    expect('RATE_LIMITER_POINTS' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
-    expect('RATE_LIMITER_STORE' in secretsByPath['dme_spectrum/data/cms/rl']).toBeTruthy();
+    expect(Object.keys(secretsByPath['domain/data/cms/rl'])).toHaveLength(4);
+    expect('RATE_LIMITER_DURATION' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
+    expect('RATE_LIMITER_ENABLED' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
+    expect('RATE_LIMITER_POINTS' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
+    expect('RATE_LIMITER_STORE' in secretsByPath['domain/data/cms/rl']).toBeTruthy();
   });
 });

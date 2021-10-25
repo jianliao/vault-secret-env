@@ -7,7 +7,7 @@ const { getVaultSecretsSync } = require('./core');
 
 colors.enable();
 
-const vaultAddr = process.env.VAULT_ADDR || 'https://vault-amer.adobe.net';
+const vaultAddr = process.env.VAULT_ADDR || 'http://localhost:8200';
 const rootToken = process.env.VAULT_ROOT_TOKEN;
 const tokenRole = process.env.VAULT_TOKEN_ROLE;
 const tokenRoleTTL = process.env.VAULT_TOKEN_ROLE_TTL;

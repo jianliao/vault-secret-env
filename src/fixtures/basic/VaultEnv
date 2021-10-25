@@ -1,14 +1,14 @@
-PORT=dme_spectrum/data/cms/gm:PORT
-PUBLIC_URL=dme_spectrum/data/cms/gm:PUBLIC_URL
+PORT=domain/data/cms/gm:PORT
+PUBLIC_URL=domain/data/cms/gm:PUBLIC_URL
 
-DB_CLIENT=dme_spectrum/data/cms/db:DB_CLIENT
-DB_DATABASE=dme_spectrum/data/cms/db:DB_DATABASE
-DB_HOST=dme_spectrum/data/cms/db:DB_HOST
-DB_PORT=dme_spectrum/data/cms/db:DB_PORT
-DB_SSL=dme_spectrum/data/cms/db:DB_SSL
+DB_CLIENT=domain/data/cms/db:DB_CLIENT
+DB_DATABASE=domain/data/cms/db:DB_DATABASE
+DB_HOST=domain/data/cms/db:DB_HOST
+DB_PORT=domain/data/cms/db:DB_PORT
+DB_SSL=domain/data/cms/db:DB_SSL
 
-CACHE_ENABLED=dme_spectrum/data/cms/cache:CACHE_ENABLED
+CACHE_ENABLED=domain/data/cms/cache:CACHE_ENABLED
 
-STORAGE_LOCAL_DRIVER=dme_spectrum/data/cms/fs:STORAGE_LOCAL_DRIVER
-STORAGE_LOCAL_ROOT=dme_spectrum/data/cms/fs:STORAGE_LOCAL_ROOT
-STORAGE_LOCATIONS=dme_spectrum/data/cms/fs:STORAGE_LOCATIONS
+STORAGE_LOCAL_DRIVER=domain/data/cms/fs:STORAGE_LOCAL_DRIVER
+STORAGE_LOCAL_ROOT=domain/data/cms/fs:STORAGE_LOCAL_ROOT
+STORAGE_LOCATIONS=domain/data/cms/fs:STORAGE_LOCATIONS
