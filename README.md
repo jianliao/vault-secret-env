@@ -2,6 +2,11 @@
 
 Vault Env package provides a [dotenv](https://github.com/motdotla/dotenv) like usage experience. User defines [vault](https://www.vaultproject.io/) secrets with the .env file format. This package will pull the vault secrets into [process.env](https://nodejs.org/api/process.html#process_process_env).
 
+## Installation
+```bash
+npm install vault-secret-env
+```
+
 ## VaultEnv file
 
 VaultEnv is like `.env` file and follows some of its basic [rules](https://github.com/motdotla/dotenv#rules):
