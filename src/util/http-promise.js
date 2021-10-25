@@ -34,11 +34,11 @@ exports.request = async (urlString, headers = {}, method = 'GET', bodyData = nul
 
       const data = [];
 
-      res.on("data", chunk => {
+      res.on('data', chunk => {
         data.push(chunk);
       });
 
-      res.on("end", () => {
+      res.on('end', () => {
         try {
           const jsonRes = JSON.parse(new TextDecoder().decode(Buffer.concat(data)));
           resolve(jsonRes);
@@ -52,7 +52,7 @@ exports.request = async (urlString, headers = {}, method = 'GET', bodyData = nul
       });
     });
 
-    req.on("error", reject);
+    req.on('error', reject);
 
     if (bodyData) {
       req.write(bodyData);

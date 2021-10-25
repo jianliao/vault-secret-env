@@ -54,7 +54,7 @@ VaultEnv file should put at the root of the project along with .env and package.
 Use it just like [dotenv](https://github.com/motdotla/dotenv) package, as early as possible in your application, require vault-secret-env.
 
 ```js
-require("vault-secret-env");
+require('vault-secret-env');
 ```
 
 Run the application with VAULT_ADDR and VAULT_ROOT_TOKEN

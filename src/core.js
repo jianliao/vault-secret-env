@@ -7,7 +7,7 @@ async function getVaultSecrets(vaultAddr, rootToken, secretsByPath, tokenRole = 
   if (tokenRole) {
     const { auth: { client_token } } = await request(
       `${vaultAddr}/v1/auth/token/create/${tokenRole}`,
-      { "X-Vault-Token": rootToken },
+      { 'X-Vault-Token': rootToken },
       'POST',
       ttl ? JSON.stringify({ ttl }) : null);
     token = client_token;
@@ -20,7 +20,7 @@ async function getVaultSecrets(vaultAddr, rootToken, secretsByPath, tokenRole = 
 
     let { data } = JSON.parse(sendMessage({
       url: `${vaultAddr}/v1/${secretPath}`,
-      headers: { "X-Vault-Token": token }
+      headers: { 'X-Vault-Token': token }
     }));
 
     if (data.data) {
@@ -43,7 +43,7 @@ function getVaultSecretsSync(vaultAddr, rootToken, secretsByPath, tokenRole = nu
   if (tokenRole) {
     const { auth: { client_token } } = JSON.parse(sendMessage({
       url: `${vaultAddr}/v1/auth/token/create/${tokenRole}`,
-      headers: { "X-Vault-Token": rootToken },
+      headers: { 'X-Vault-Token': rootToken },
       method: 'POST',
       body: ttl ? JSON.stringify({ ttl }) : null
     }));
@@ -58,7 +58,7 @@ function getVaultSecretsSync(vaultAddr, rootToken, secretsByPath, tokenRole = nu
 
     let { data } = JSON.parse(sendMessage({
       url: `${vaultAddr}/v1/${secretPath}`,
-      headers: { "X-Vault-Token": token }
+      headers: { 'X-Vault-Token': token }
     }));
 
     if (data.data) {
