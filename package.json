@@ -28,6 +28,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jianliao/vault-secrets-env.git"
+    "url": "git+https://github.com/jianliao/vault-secret-env.git"
   }
 }
