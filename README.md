@@ -83,7 +83,7 @@ $ VAULT_ADDR=https://localhost:8000 \
 This package also provides a simple cli to validate the VaultEnv settings.
 
 ```bash
-$ npx vault-env -a https://localhost:8000 -t MTIzNDU
+$ npx vault-secret-env -a https://localhost:8000 -t MTIzNDU
 ```
 
 Output
@@ -101,8 +101,8 @@ DB_SSL : false ✓
 See more options by running with `-h` or `--help`.
 
 ```bash
-$npx vault-env --help
-Usage: vault-env [options]
+$npx vault-secret-env --help
+Usage: vault-secret-env [options]
 
 Options:
   -V, --version                     output the version number

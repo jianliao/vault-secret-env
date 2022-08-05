@@ -7,7 +7,7 @@
     "test": "./start-vault-dev-server-for-testing.sh && jest && pkill -9 vault"
   },
   "bin": {
-    "vault-env": "src/cli.js"
+    "vault-secret-env": "src/cli.js"
   },
   "keywords": [
     "vault",
@@ -19,12 +19,12 @@
   "license": "MIT",
   "devDependencies": {
     "execa": "^5.1.1",
-    "jest": "^27.1.1"
+    "jest": "^28.1.3"
   },
   "dependencies": {
     "colors": "^1.4.0",
-    "commander": "^8.2.0",
-    "dotenv": "^10.0.0"
+    "commander": "^9.4.0",
+    "dotenv": "^16.0.1"
   },
   "repository": {
     "type": "git",
