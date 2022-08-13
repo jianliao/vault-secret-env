@@ -1,20 +1,21 @@
 #!/usr/bin/env node
 'use strict';
 
-const dotenv = require('dotenv');
-const colors = require('colors');
-const { existsSync, readFileSync } = require('fs');
-const { resolve } = require('path');
-const { Command } = require('commander');
-const { exit } = require('process');
-const { parseVaultEnv } = require('./util/parse-vaultenv');
-const { getVaultSecrets } = require('./core');
+import dotenv from 'dotenv';
+import colors from 'colors';
+import { existsSync, readFileSync } from 'fs';
+import { resolve } from 'path';
+import { Command } from 'commander';
+import { exit } from 'process';
+import { parseVaultEnv } from './util/parse-vaultenv.js';
+import { getVaultSecrets } from './core.js';
+import pkg from '../package.json' assert { type: "json"};
 
 colors.enable();
 
 const program = new Command();
 
-program.version(require('../package.json').version);
+program.version(pkg.version);
 
 program
   .option('-a, --address <url>',

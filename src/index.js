@@ -1,9 +1,9 @@
-const colors = require('colors');
-const dotenv = require('dotenv');
-const { readFileSync } = require('fs');
-const { resolve } = require('path');
-const { parseVaultEnv } = require('./util/parse-vaultenv');
-const { getVaultSecretsSync } = require('./core');
+import colors from 'colors';
+import dotenv from 'dotenv';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { parseVaultEnv } from './util/parse-vaultenv.js';
+import { getVaultSecretsSync } from './core.js';
 
 colors.enable();
 

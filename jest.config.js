@@ -2,8 +2,7 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-
-module.exports = {
+const config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -172,7 +171,7 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  transform: {},
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
@@ -193,5 +192,7 @@ module.exports = {
   // watchman: true,
 
   // Timeout of a test in milliseconds. Default: 5000
-  testTimeout: 5000*3
+  testTimeout: 5000 * 3
 };
+
+export default config;

@@ -1,4 +1,4 @@
-exports.parseVaultEnv = (vaultSecrets) => {
+function parseVaultEnv(vaultSecrets) {
   const secretsByPath = {};
   for (const varName in vaultSecrets) {
     const varValue = vaultSecrets[varName];
@@ -11,3 +11,5 @@ exports.parseVaultEnv = (vaultSecrets) => {
   }
   return secretsByPath;
 }
+
+export { parseVaultEnv }

@@ -1,16 +1,22 @@
-const { execFileSync } = require('child_process');
-const { request } = require('./util/http-promise');
-const { join } = require('path');
+import { execFileSync } from 'child_process';
+import { join } from 'path';
 
 async function getVaultSecrets(vaultAddr, rootToken, secretsByPath, tokenRole = null, ttl = 60) {
   let token = rootToken;
   if (tokenRole) {
-    const { auth: { client_token } } = await request(
+    const res = await fetch(
       `${vaultAddr}/v1/auth/token/create/${tokenRole}`,
-      { 'X-Vault-Token': rootToken },
-      'POST',
-      ttl ? JSON.stringify({ ttl }) : null);
-    token = client_token;
+      {
+        headers: { 'X-Vault-Token': rootToken },
+        method: 'POST',
+        body: ttl ? JSON.stringify({ ttl }) : null
+      });
+    if (res.ok) {
+      const { auth: { client_token } } = await res.json();
+      token = client_token;
+    } else {
+      return Promise.reject('Unable to retrieve role token.');
+    }
   }
 
   const secretsKV = {};
@@ -77,7 +83,7 @@ function getVaultSecretsSync(vaultAddr, rootToken, secretsByPath, tokenRole = nu
 }
 
 function sendMessage(message) {
-  return execFileSync(process.execPath, [join(__dirname, 'worker')], {
+  return execFileSync(process.execPath, [join('src', 'worker.js')], {
     windowsHide: true,
     maxBuffer: Infinity,
     input: JSON.stringify(message),
@@ -85,5 +91,4 @@ function sendMessage(message) {
   }).toString();
 }
 
-exports.getVaultSecrets = getVaultSecrets;
-exports.getVaultSecretsSync = getVaultSecretsSync;
+export { getVaultSecrets, getVaultSecretsSync }

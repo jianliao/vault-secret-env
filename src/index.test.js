@@ -1,7 +1,7 @@
-const { resolve } = require('path');
+import { resolve } from 'path';
+import { jest } from '@jest/globals';
 
 describe('Setup process.env with Vault Secrets', () => {
-  const { jest } = require('@jest/globals');
 
   beforeEach(async () => {
     jest.resetModules();
@@ -32,7 +32,7 @@ describe('Setup process.env with Vault Secrets', () => {
   test('should get all the vault secrets set as environment variables', async () => {
     process.env.VAULT_ENV_PATH = resolve('./src/fixtures/basic');
 
-    require('./index');
+    await import('./index.js');
 
     expect(process.env.PORT).toBe('8055');
     expect(process.env.STORAGE_LOCAL_ROOT).toBe('./uploads');
@@ -47,7 +47,7 @@ describe('Setup process.env with Vault Secrets', () => {
     process.env.DB_DATABASE = 'mysql';
     process.env.VAULT_ENV_PATH = resolve('./src/fixtures/basic');
 
-    require('./index');
+    await import('./index.js');
 
     expect(process.env.DB_DATABASE).toBe('mysql');
   });
@@ -55,7 +55,7 @@ describe('Setup process.env with Vault Secrets', () => {
   test('should work with fallback VaultEnv', async () => {
     process.env.VAULT_ENV_PATH = resolve('./src/fixtures/fallback');
 
-    require('./index');
+    await import('./index.js');
 
     expect(process.env.PORT).toBe('8055');
     expect(process.env.PUBLIC_URL).toBe('https://domain.com');
@@ -69,7 +69,7 @@ describe('Setup process.env with Vault Secrets', () => {
     delete process.env.VAULT_TOKEN_ROLE; // Delete token role pre-set in beforeEach callback
     process.env.VAULT_ENV_PATH = resolve('./src/fixtures/basic');
 
-    require('./index');
+    await import('./index.js');
 
     expect(process.env.PORT).toBe('8055');
     expect(process.env.STORAGE_LOCAL_ROOT).toBe('./uploads');
@@ -82,7 +82,7 @@ describe('Setup process.env with Vault Secrets', () => {
   test('should not set up env var that does not exist in Vault', async () => {
     process.env.VAULT_ENV_PATH = resolve('./src/fixtures/integration');
 
-    require('./index');
+    await import('./index.js');
 
     expect(process.env.UNKNOWN).toBeUndefined();
   });
@@ -90,7 +90,7 @@ describe('Setup process.env with Vault Secrets', () => {
   test('should support mix secret keys scenario', async () => {
     process.env.VAULT_ENV_PATH = resolve('./src/fixtures/advanced');
 
-    require('./index');
+    await import('./index.js');
 
     expect(process.env.PORT).toBe('8055');
     expect(process.env.PUBLIC_URL).toBe('https://domain.com');

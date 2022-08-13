@@ -3,8 +3,9 @@
   "version": "2.0.1",
   "description": "Pull vault secrets into process.env",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "./start-vault-dev-server-for-testing.sh && jest && pkill -9 vault"
+    "test": "./start-vault-dev-server-for-testing.sh && NODE_OPTIONS=--experimental-vm-modules jest && pkill -9 vault"
   },
   "bin": {
     "vault-secret-env": "src/cli.js"

@@ -1,7 +1,7 @@
-const { parse } = require('dotenv');
-const { readFileSync } = require('fs');
-const { resolve } = require('path');
-const { parseVaultEnv } = require('./parse-vaultenv');
+import { parse } from 'dotenv';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { parseVaultEnv } from './parse-vaultenv.js';
 
 describe('Basic scenarios', () => {
   test('should be able to generate correct secrets by path data structure', () => {

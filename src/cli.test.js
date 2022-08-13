@@ -1,4 +1,4 @@
-const execa = require('execa');
+import execa from 'execa';
 
 describe('CLI basic scenarios', () => {
   test('should exit with error if no VAULT_ROOT_TOKEN', async () => {

@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-const { request } = require('./util/http-promise');
-
 const chunks = [];
 
 process.stdin.resume();
@@ -15,8 +13,8 @@ process.stdin.on('end', async () => {
   const { url, headers, method, body } = JSON.parse(chunks.join(''));
 
   try {
-    const result = await request(url, headers, method, body);
-    respond(result);
+    const res = await fetch(url, { headers, method, body });
+    res.ok ? respond(await res.json()) : respond('Unable to retrieve data from vault.');
   }
   catch (e) {
     respond(e.message);
