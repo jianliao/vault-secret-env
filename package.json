@@ -1,6 +1,6 @@
 {
   "name": "vault-secret-env",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Pull vault secrets into process.env",
   "main": "src/index.js",
   "type": "module",
