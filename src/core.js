@@ -1,5 +1,8 @@
 import { execFileSync } from 'child_process';
 import { join } from 'path';
+import * as url from 'url';
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 async function getVaultSecrets(vaultAddr, rootToken, secretsByPath, tokenRole = null, ttl = 60) {
   let token = rootToken;
@@ -83,7 +86,7 @@ function getVaultSecretsSync(vaultAddr, rootToken, secretsByPath, tokenRole = nu
 }
 
 function sendMessage(message) {
-  return execFileSync(process.execPath, [join('src', 'worker.js')], {
+  return execFileSync(process.execPath, [join(__dirname, 'worker')], {
     windowsHide: true,
     maxBuffer: Infinity,
     input: JSON.stringify(message),
