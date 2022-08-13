@@ -30,5 +30,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jianliao/vault-secret-env.git"
+  },
+  "engines": {
+    "node": ">=18.7.0"
   }
 }
