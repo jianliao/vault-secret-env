@@ -56,7 +56,15 @@ VaultEnv file should put at the root of the project along with .env and package.
 
 ## Load vault secrets into nodejs process.env
 
-Use it just like [dotenv](https://github.com/motdotla/dotenv) package, as early as possible in your application, require vault-secret-env.
+Use it just like [dotenv](https://github.com/motdotla/dotenv) package, as early as possible in your application, import or require vault-secret-env.
+
+### v3.0.4
+
+```js
+import 'vault-secret-env';
+```
+
+### v2.0.1
 
 ```js
 require('vault-secret-env');
@@ -121,5 +129,5 @@ The core functionality of this package has zero dependency on any third-party pa
 To run the end-to-end test, you need to install vault dev server first, see [here](https://www.vaultproject.io/downloads) for more detail. The e2e test will spin up a vault dev server on port `8200`, please ensure the port is not in-use before the test.
 
 ```bash
-$npm test
+$pnpm test
 ```
