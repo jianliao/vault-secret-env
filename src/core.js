@@ -27,11 +27,18 @@ async function getVaultSecrets(vaultAddr, rootToken, secretsByPath, tokenRole = 
   for (let secretPath in secretsByPath) {
     secretPath = secretPath.endsWith('/') ? secretPath.slice(0, -1) : secretPath; // remove last slash
 
-    let { data } = JSON.parse(sendMessage({
+    let response = JSON.parse(sendMessage({
       url: `${vaultAddr}/v1/${secretPath}`,
-      headers: { 'X-Vault-Token': token }
+      headers: { 'X-Vault-Token': token },
+      method: 'GET'
     }));
 
+    if (response.error) {
+      console.error(response.error);
+      continue;
+    }
+
+    let data = response.data;
     if (data.data) {
       data = data.data;
     }
@@ -67,7 +74,8 @@ function getVaultSecretsSync(vaultAddr, rootToken, secretsByPath, tokenRole = nu
 
     let { data } = JSON.parse(sendMessage({
       url: `${vaultAddr}/v1/${secretPath}`,
-      headers: { 'X-Vault-Token': token }
+      headers: { 'X-Vault-Token': token },
+      method: 'GET'
     }));
 
     if (data.data) {
